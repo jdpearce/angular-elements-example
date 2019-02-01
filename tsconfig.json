@@ -7,7 +7,7 @@
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "target": "es2015",  // Custom Elements require ES2015 classes (or polyfill).
+    "target": "es5",  // Custom Elements require ES2015 classes (or polyfill).
     "skipLibCheck": true,
     "typeRoots": [
       "node_modules/@types"
