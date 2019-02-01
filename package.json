@@ -5,8 +5,9 @@
   "description": "Example project from an angular.io guide.",
   "scripts": {
     "ng": "ng",
-    "build": "ng build",
-    "start": "ng serve",
+    "build": "ng build --prod",
+    "build-library": "ng build --c=library && cat dist/{runtime,polyfills,main}.js | gzip > elements.js.gz",
+    "start": "http-server --gzip",
     "test": "ng test",
     "lint": "tslint ./src/**/*.ts -t verbose",
     "e2e": "ng e2e"
@@ -39,6 +40,7 @@
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "^2.0.4",
     "@types/node": "~8.9.4",
+    "http-server": "^0.11.1",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~3.0.0",

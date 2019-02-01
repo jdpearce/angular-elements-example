@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Angular Element Test</title>
+    <script src="elements.js"></script>
+  </head>
+  <body>
+    <input id="popupMessage" value="Message" />
+    <button id="showPopup">Show popup</button>
+  </body>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(event) {
+      document.getElementById('showPopup').addEventListener('click', () => showPopup());
+    });
+
+    function showPopup() {
+      // Create element
+      const popupEl = document.createElement('popup-element');
+
+      // Listen to the close event
+      popupEl.addEventListener('closed', () => document.body.removeChild(popupEl));
+
+      // Set the message
+      popupEl.message = document.getElementById('popupMessage').value;
+
+      // Add to the DOM
+      document.body.appendChild(popupEl);
+    }
+  </script>
+</html>
